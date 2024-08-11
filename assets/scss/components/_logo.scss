@@ -1,0 +1,26 @@
+.logo {
+  @include bg($color-yellow);
+  width: 100%;
+  height: 146px;
+  img {
+    width: 100%;
+    height: 146px;
+    object-fit: cover;
+    transform: rotate(2deg);
+  }
+
+  @media screen and (max-width: 1025px) {
+    height: 100px;
+    img {
+      transform: rotate(2deg) translateY(-22px);
+    }
+  }
+
+  /* Mobile: width < 740px */
+  @media only screen and (max-width: 46.1875em) {
+    height: 72px;
+    img {
+      height: 120px;
+    }
+  }
+}

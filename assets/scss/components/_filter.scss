@@ -1,0 +1,148 @@
+.filter {
+  position: relative;
+  &-bg {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+  &-header {
+    background-image: unset;
+    padding-bottom: 74px;
+  }
+  &-main {
+    display: flex;
+    gap: 0 30px;
+    margin-bottom: 100px;
+  }
+  &-main-left {
+    width: 270px;
+  }
+  &-main-right {
+    flex: 1;
+  }
+  &-result-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &-cards-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &-item {
+    &:not(:first-child) {
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid $color-grey;
+    }
+  }
+  &-select {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    @include capitalize();
+    cursor: pointer;
+  }
+  &-content {
+    margin-top: 30px;
+    transition: all 0.2s linear;
+  }
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px 0;
+  }
+  &-form-item {
+    display: flex;
+    align-items: flex-end;
+    gap: 0 10px;
+    input {
+      display: none;
+      &:checked + .filter-checkbox::before {
+        @include bg($color-blue);
+        border: 1px solid $color-blue;
+      }
+      &:checked + .filter-checkbox::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &-checkbox {
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: transparent;
+      border: 1px solid $color-grey;
+      border-radius: 2px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.2s linear;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 4px;
+      width: 9px;
+      height: 5px;
+      transform: rotate(-45deg);
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transition: all 0.2s linear;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  &-form-number {
+    flex-direction: row;
+    gap: 0 20px;
+  }
+  &-number {
+    width: 100%;
+    padding: 15px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    @include bg($color-dark2);
+    border-radius: 6px;
+  }
+
+  @media screen and (max-width: 1025px) {
+    &-cards-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-cards-item {
+      height: 416px;
+    }
+  }
+
+  @media screen and (max-width: 1023.98px) {
+    &-main-left {
+      display: none;
+    }
+  }
+
+  /* Mobile: width < 740px */
+  @media only screen and (max-width: 46.1875em) {
+    &-main {
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
+    &-result-list {
+      grid-template-columns: unset;
+    }
+    &-cards-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &-cards-item {
+      height: 511px;
+    }
+  }
+}
