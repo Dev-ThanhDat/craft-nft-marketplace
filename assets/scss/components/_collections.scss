@@ -1,0 +1,101 @@
+.collections {
+  padding-bottom: 160px;
+  background: url("/assets/images/Blur-2.png") center / cover no-repeat;
+  &-top {
+    width: 570px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 0 20px;
+    margin: 55px 0;
+    p {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 30px;
+      padding: 15px 35px;
+      @include bg($color-dark2);
+      @include capitalize();
+      border-radius: 6px;
+      transition: all 0.2s linear;
+      &:hover {
+        @include bg($color-blue);
+      }
+    }
+  }
+  &-card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+  &-card-item {
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    @include bg($color-dark2);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  &-image {
+    width: 54px;
+    flex-shrink: 0;
+  }
+  &-card-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+  }
+  &-card-content-right {
+    font-weight: 400;
+    line-height: 24px;
+    h4 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 30px;
+      @include capitalize();
+    }
+  }
+  &-card-content-left {
+    font-weight: 400;
+    line-height: 24px;
+    color: $color-green;
+  }
+  &-card-content-red {
+    color: $color-red;
+  }
+  &-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+  }
+
+  @media screen and (max-width: 1023.98px) {
+    &-card-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobile: width < 740px */
+  @media only screen and (max-width: 46.1875em) {
+    &-top {
+      width: 100%;
+    }
+    &-time {
+      flex-direction: column;
+      gap: 12px 0;
+      margin-bottom: 30px;
+    }
+    &-card-list {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 18px 0;
+    }
+    &-btn {
+      margin-top: 30px;
+    }
+  }
+}

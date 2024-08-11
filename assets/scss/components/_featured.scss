@@ -1,0 +1,134 @@
+.featured {
+  margin-bottom: 148px;
+  background: url("/assets/images/Blur-3.png") left / cover no-repeat;
+  &-top {
+    width: 570px;
+    text-align: center;
+    margin: 0 auto 55px;
+  }
+  &-top-heading {
+    margin-bottom: 16px;
+  }
+  &-icon {
+    width: 33px;
+    display: inline-block;
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+  &-item {
+    @include bg($color-dark2);
+    border-radius: 12px;
+    padding: 20px;
+    height: 620px;
+    overflow: hidden;
+    &:hover .featured-image {
+      height: 330px;
+    }
+  }
+  &-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 428px;
+    margin-bottom: 20px;
+    transition: all 0.2s linear;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-heart {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 12px;
+    @include bg($color-white);
+    border-radius: 100px;
+    color: $color-grey;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    &:hover {
+      color: $color-red;
+    }
+  }
+  &-title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+    @include capitalize();
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+  }
+  &-desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 16px;
+    span {
+      color: $color-blue;
+    }
+  }
+  &-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $color-grey;
+    p {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 30px;
+      color: $color-white;
+    }
+  }
+  &-btn {
+    display: block;
+    margin-top: 38px;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 6px;
+    @include bg($color-blue);
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  &-more {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1025px) {
+    margin-bottom: 70px;
+    &-top {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    &-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobile: width < 740px */
+  @media only screen and (max-width: 46.1875em) {
+    &-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &-more {
+      margin-top: 30px;
+    }
+  }
+}

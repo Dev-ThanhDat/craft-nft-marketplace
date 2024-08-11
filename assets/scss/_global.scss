@@ -1,0 +1,51 @@
+.wrapper {
+  max-width: 1550px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1188px;
+  padding: 0 18px;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 15px 35px;
+  @include bg($color-blue);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  transition: all 0.2s linear;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.global-heading {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 54px;
+  @include capitalize();
+}
+
+.global-desc {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: $color-grey;
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+  .global-heading {
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  .global-desc {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}

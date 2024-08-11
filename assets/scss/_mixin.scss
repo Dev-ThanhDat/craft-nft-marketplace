@@ -1,0 +1,9 @@
+// Background Color
+@mixin bg($color) {
+  background-color: $color;
+}
+
+// Text Capitalize
+@mixin capitalize() {
+  text-transform: capitalize;
+}

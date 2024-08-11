@@ -1,0 +1,86 @@
+.artists {
+  padding-bottom: 160px;
+  &-top {
+    margin-bottom: 55px;
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 30px;
+  }
+  &-item {
+    @include bg($color-dark2);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+  }
+  &-avatar {
+    border: 12px solid $color-dark2;
+    width: 74px;
+    object-fit: cover;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  &-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-text {
+    font-weight: 400;
+    line-height: 24px;
+    color: $color-grey;
+    @include capitalize();
+    P {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 30px;
+      color: $color-white;
+    }
+  }
+  &-content-btn {
+    padding: 8px 24px;
+    @include bg($color-dark3);
+    border-radius: 4px;
+    transition: all 0.2s linear;
+    &:hover {
+      @include bg($color-blue);
+    }
+  }
+  &-btn {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1023.98px) {
+    &-list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+  }
+
+  /* Mobile: width < 740px */
+  @media only screen and (max-width: 46.1875em) {
+    padding-bottom: 70px;
+    &-top {
+      margin-bottom: 30px;
+    }
+    &-list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &-btn {
+      margin-top: 30px;
+    }
+  }
+}
